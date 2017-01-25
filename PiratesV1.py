@@ -1,70 +1,68 @@
-# -*- coding: cp1252 -*-
-
 import random
 
-print ("Vous étiez cuisinier sur un navire de sanguinaires Pirates !")
-nbPirates1 = int (input ("Vous souvenez-vous de combien de Pirates y'avait il sur ce navire ?"))
+print ("You are a poor chinese slave cook on a bloodthirsty pirates ship.")
+NBPIRATES1 = int (input ("How many pirates on this ship?   "))
 
 print("")
-print ("Après leur dernière rapille, les"), (nbPirates1), ("forbants décident enfin de se partager leur magot...")
-print ("Le cofre contient un nombre entier inconnu de pièces d'or de même valeure.")
+print ("After their last ritual," (NBPIRATES1), "the forbans finally decided to share their magot ...")
+print ("The chest contains an integer x of gold coins.")
+print ("They share these coins fairly, but there is a little left.")
+print ("In their great magnanimity, they decide to offer you his remaining pieces!")
+REMAIN1 = int (input ("How many coins did you receive?"))
 
 print("")
-print ("Ils se partagent de façon équitable les pièces, mais il en leur reste un peu.")
-print ("Dans leur grande magnanimité, ils décident de vous offrir ses pièces restantes !")
-reste1 = int (input ("Combien de pièce aviez vous reçu ?"))
+print ("But a mutiny broke out then, making many victims ...")
+NBPIRATES2 = NBPIRATES1 - int (input ("How many pirates died in this tragic event?   "))
 
 print("")
-print ("Mais une mutinerie éclatte alors, faisant de nombreuses victimes...")
-nbPirates2 = nbPirates1 - int (input ("Combien de Pirates sont mort lors de ce tragique évènement ?"))
+print ("The"), (NBPIRATES2), ("survivors again share fairly ALL the coins, but they still have a few more.")
+print ("In their great mansuetude, they decide to offer you again this remaining pieces!")
+REMAIN2 = int (input ("How many coins did you receive this time?   "))
 
 print("")
-print ("Les"), (nbPirates2), ("survivants se partagent à nouveau de façon équitable TOUTES les pièces, mais il en leur reste encore un peu.")
-print ("Dans leur grande mansuétude, ils décident de vous offrir ses pièces restantes !")
-reste2 = int (input ("Combien de pièce aviez vous reçu cette fois-ci ?"))
+print ("But now a terrible storm breaks out and the ship crashes on rocks ...")
+NBPIRATES3 = int (input ("You survived! Stranded on the beach, how many pirates find you by your side?"))
 
 print("")
-print ("Mais voilà qu'une terrible tempête éclatte et que le vaisseau se fracasse sur des rochers...")
-nbPirates3 = int (input ("Vous avez survécu ! Echoué sur la plage, combien de Pirates retrouvez vous à vos cotés ?"))
+print ("The"), (NBPIRATES3), ("remaining pirates, again share fairly ALL the pieces, but they still have a little bit of them.")
+print ("In their great kindness, they decide to offer you again this remaining pieces!")
+REMAIN3 = int (input ("How many coins did you receive after this last disbursement?   "))
 
 print("")
-print ("Les"), (nbPirates3), ("restants, se partagent une nouvelle fois de façon équitable TOUTES les pièces, mais il en leur reste toujours un peu.")
-print ("Dans leur grande bonté, ils décident de vous offrir ses pièces restantes !")
-reste3 = int (input ("Combien de pièce aviez vous reçu après ce dérnier partage ?"))
-
-print("")
-print ("Et alors que vous préparer un délicieux ragoux de tortue à la noix de coco...")
-print ("Vous vous demandez combien de pièces d'or vous pourriez récupérer au minium...")
-print ("Si vous empoisogniez c'est malheureux rescapés !")
+print ("And while you prepare a delicious coconut turtle ragout ...")
+print ("you wonder how many gold coins you can get at least ... ")
+print ("if you poison this unfortunate survivors!")
 print ("")
-reponse = int (input ("C'est vrai ça... Combien de pièces ce mystérieux coffre contenait-il donc ?"))
+ANSWER = int (input ("Is that true ... How many pieces does this mysterious chest contain?"))
 
 
-lastModulo = nbPirates1 * nbPirates2 * nbPirates3
-print ("Congruance ="), (lastModulo)
+LASTMODULO = NBPIRATES1 * NBPIRATES2 * NBPIRATES3
+print ("Congruance ="), (LASTMODULO)
 
-inconnu1 = nbPirates2 * nbPirates3
-while (inconnu1 % nbPirates1) != 1:
-        inconnu1 = inconnu1 * 2
+UNKNOW1 = NBPIRATES2 * NBPIRATES3
+while (UNKNOW1 % NBPIRATES1) != 1:
+        UNKNOW1 = UNKNOW1 * 2
 	
-inconnu2 = nbPirates1 * nbPirates3
-while (inconnu2 % nbPirates2) != 1:
-        inconnu2 = inconnu2 * 2	
+UNKNOW2 = NBPIRATES1 * NBPIRATES3
+while (UNKNOW2 % NBPIRATES2) != 1:
+        UNKNOW2 = UNKNOW2 * 2	
 
-inconnu3 = nbPirates1 * nbPirates2
-while (inconnu3 % nbPirates3) != 1:
-        inconnu3 = inconnu3 * 2
+UNKNOW3 = NBPIRATES1 * NBPIRATES2
+while (UNKNOW3 % NBPIRATES3) != 1:
+        UNKNOW3 = UNKNOW3 * 2
 
-tresor = (inconnu1 * reste1 + inconnu2 * reste2 + inconnu3 * reste3) % lastModulo
+TREASURE = (UNKNOW1 * REMAIN1 + UNKNOW2 * REMAIN2 + UNKNOW3 * REMAIN3) % LASTMODULO
 
-if reponse == tresor:
+if ANSWER == TREASURE:
 	print("")
-	print ("Félicitation, il y avait bien au moins"), (tresor), ("pièces d'or dans ce coffre !")
-	print ("Avez vous mis en action votre plan machiavelic ? Seul vous possédez la réponse...")
+	print ("Congratulations, there was at least"), (TREASURE), ("gold coins in this chest!")
+	print ("Have you put into action your machiavelic plan? Only you have the answer ...")
 else:
 	print("")
-	print ("Et non, vous vous êtes trompé... Il y avait au moins"), (tresor), ("pièces d'or dans ce coffre...")
-	print ("Mais, avez vous mis pour autant en réalisé votre sinistre projet ? Seul vous possédez la réponse...")
+	print ("And no, you were wrong ... There was at least"), (TREASURE), ("gold coins in this chest ...")
+	print ("But, do you have to realize your sinister project? Only you have the answer ...")
 
 print("")
-print ("Aurevoir !")
+print("Press enter key to close this game.")
+print ("Bye!")
+CLOSE = input ()
