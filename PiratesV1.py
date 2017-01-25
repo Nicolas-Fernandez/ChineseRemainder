@@ -1,10 +1,11 @@
 import random
 
+print ("")
 print ("You are a poor chinese slave cook on a bloodthirsty pirates ship.")
 NBPIRATES1 = int (input ("How many pirates on this ship?   "))
 
 print("")
-print ("After their last ritual," (NBPIRATES1), "the forbans finally decided to share their magot ...")
+print ("After their last ritual,", (NBPIRATES1), "the forbans finally decided to share their magot ...")
 print ("The chest contains an integer x of gold coins.")
 print ("They share these coins fairly, but there is a little left.")
 print ("In their great magnanimity, they decide to offer you his remaining pieces!")
